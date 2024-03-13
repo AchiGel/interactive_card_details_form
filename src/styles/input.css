@@ -40,4 +40,5 @@
 
 .input-box-date .input-box-date-inputs input {
   max-width: 80px;
+  min-width: 72px;
 }

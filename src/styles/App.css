@@ -1,5 +1,36 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.backGround {
+  position: relative;
+}
+
+.backGround .backCard {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  width: 80%;
+}
+
+.backGround .frontCard {
+  box-shadow: 0px 39px 60px rgba(0, 0, 0, 0.14);
+  position: absolute;
+  top: 125px;
+  left: 17px;
+  width: 80%;
+}
+
+.backGround img {
+  width: 100%;
+}
+
 .card-form {
   max-width: 381px;
+  padding-inline: 24px;
+  padding-bottom: 45px;
   display: flex;
   flex-direction: column;
   gap: 26px;

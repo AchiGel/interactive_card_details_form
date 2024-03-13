@@ -1,9 +1,17 @@
 import "../styles/App.css";
 import Input from "./Input";
+import bg_mobile from "../images/bg-main-mobile.png";
+import FrontCard from "./FrontCard";
+import BackCard from "./BackCard";
 
 function App() {
   return (
     <div className="App">
+      <section className="backGround">
+        <img src={bg_mobile} alt="bg" />
+        <BackCard />
+        <FrontCard />
+      </section>
       <form className="card-form">
         <Input
           inputId="cardHolderName"
