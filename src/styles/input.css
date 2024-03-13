@@ -1,0 +1,43 @@
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.input-box input {
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 1px solid #dfdee0;
+  background: #fff;
+  outline: none;
+  color: #21092f;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.input-box input::placeholder {
+  opacity: 0.25;
+}
+
+.input-box label {
+  color: #21092f;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.input-box-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box-date .input-box-date-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.input-box-date .input-box-date-inputs input {
+  max-width: 80px;
+}

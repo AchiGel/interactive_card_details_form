@@ -1,0 +1,25 @@
+.card-form {
+  max-width: 381px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.card-form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.card-form-row .input-box-date {
+  gap: 9px;
+}
+
+.card-form button {
+  border-radius: 8px;
+  background: #21092f;
+  color: #fff;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 0 15px;
+}
