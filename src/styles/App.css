@@ -6,6 +6,7 @@
 }
 
 .backGround {
+  width: 100%;
   position: relative;
 }
 
@@ -100,4 +101,59 @@
   border: none;
   outline: none;
   width: 100%;
+}
+
+@media (min-width: 426px) {
+  .backGround {
+    width: auto;
+  }
+}
+
+@media (min-width: 426px) {
+  .backGround {
+    width: 426px;
+  }
+
+  .App {
+    gap: 50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .App {
+    min-height: 100vh;
+    flex-direction: row;
+    gap: 20%;
+  }
+
+  .backGround {
+    min-height: 100vh;
+    width: 483px;
+    background-image: url(../images/bg-main-desktop.png);
+  }
+
+  .backGround img {
+    display: none;
+  }
+
+  .backGround .frontCard-icons img {
+    display: block;
+  }
+
+  .backGround .frontCard {
+    top: 20%;
+    left: 164px;
+    height: 30%;
+    max-height: 245px;
+    max-width: 447px;
+  }
+
+  .backGround .backCard {
+    top: 52%;
+    left: 258px;
+    height: 30%;
+    max-height: 245px;
+    max-width: 447px;
+    box-shadow: 0px 39px 60px rgba(0, 0, 0, 0.14);
+  }
 }

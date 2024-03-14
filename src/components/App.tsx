@@ -129,11 +129,13 @@ function App() {
             value={cardNumber}
             validateNumber={validateNumber(cardNumber)}
             onChange={(e: any) => {
-              if (e.target.value.length > 16) {
+              const input = e.target.value.replace(/\s/g, "");
+              const formattedInput = input.replace(/(\d{4})/g, "$1 ").trim();
+              if (formattedInput.length > 20) {
                 return;
               }
-              setCardNumber(e.target.value);
-              validateNumber(e.target.value);
+              setCardNumber(formattedInput);
+              validateNumber(formattedInput);
             }}
             inputId="cardNumber"
             inputType="text"

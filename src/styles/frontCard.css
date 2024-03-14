@@ -38,3 +38,9 @@
   letter-spacing: 1.286px;
   text-transform: uppercase;
 }
+
+@media (max-width: 350px) {
+  .frontCard-number span {
+    font-size: 15px;
+  }
+}
