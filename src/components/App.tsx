@@ -14,6 +14,12 @@ function App() {
   const [cardCVC, setCardCVC] = useState<number | null>(null);
   const [success, setSuccess] = useState(false);
 
+  const [nameError, setNameError] = useState(false);
+  const [numberError, setNumberError] = useState(false);
+  const [dateMmError, setDateMmError] = useState(false);
+  const [dateYyError, setDateYyError] = useState(false);
+  const [cvcError, setCvcError] = useState(false);
+
   function validateName(value: string | number) {
     return value === "";
   }
@@ -54,13 +60,30 @@ function App() {
           <img src={successIcon} alt="Complete" />
           <span className="success-thanks">THANK YOU!</span>
           <span className="success-text">We’ve added your card details</span>
-          <button>Continue</button>
+          <button
+            onClick={() => {
+              setSuccess(!success);
+              setCardCVC(null);
+              setCardDateMm("");
+              setCardDateYy("");
+              setCardNumber("");
+              setCardHolderName("");
+              setCvcError(false);
+              setDateMmError(false);
+              setDateYyError(false);
+              setNameError(false);
+              setNumberError(false);
+            }}
+          >
+            Continue
+          </button>
         </div>
       ) : (
         <form
           className="card-form"
           onSubmit={(e) => {
             e.preventDefault();
+
             if (
               !validateCVC(cardCVC) &&
               !validateDateMm(cardDateMm) &&
@@ -69,13 +92,22 @@ function App() {
               !validateNumber(cardNumber)
             ) {
               setSuccess(!success);
+            } else {
+              setCvcError(true);
+              setDateMmError(true);
+              setDateYyError(true);
+              setNameError(true);
+              setNumberError(true);
             }
           }}
         >
           <Input
             className={
-              validateName(cardHolderName) ? "input-error" : "input-success"
+              nameError && validateName(cardHolderName)
+                ? "input-error"
+                : "input-success"
             }
+            nameError={nameError}
             value={cardHolderName}
             onChange={(e: any) => {
               setCardHolderName(e.target.value);
@@ -89,8 +121,11 @@ function App() {
           />
           <Input
             className={
-              validateNumber(cardNumber) ? "input-error" : "input-success"
+              numberError && validateNumber(cardNumber)
+                ? "input-error"
+                : "input-success"
             }
+            numberError={numberError}
             value={cardNumber}
             validateNumber={validateNumber(cardNumber)}
             onChange={(e: any) => {
@@ -108,10 +143,13 @@ function App() {
           <div className="card-form-row">
             <Input
               className={
-                validateDateMm(cardDateMm) || validateDateYy(cardDateYy)
+                (dateMmError || dateYyError) &&
+                (validateDateMm(cardDateMm) || validateDateYy(cardDateYy))
                   ? "input-error"
                   : "input-success"
               }
+              dateMmError={dateMmError}
+              dateYyError={dateYyError}
               valueMm={cardDateMm}
               valueYy={cardDateYy}
               onChangeMm={(e: any) => {
@@ -137,8 +175,13 @@ function App() {
               placeholder2="YY"
             />
             <Input
-              className={validateCVC(cardCVC) ? "input-error" : "input-success"}
+              className={
+                cvcError && validateCVC(cardCVC)
+                  ? "input-error"
+                  : "input-success"
+              }
               value={cardCVC}
+              cvcError={cvcError}
               onChange={(e: any) => {
                 if (e.target.value.length > 3) {
                   return;

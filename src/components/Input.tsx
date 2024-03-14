@@ -14,13 +14,13 @@ function Input(props: any) {
             type={props.inputType}
             id={props.inputId}
           />
-          {props.validateName ? (
+          {props.nameError && props.validateName ? (
             <span className="error">Can't be blank</span>
           ) : null}
-          {props.validateNumber ? (
+          {props.numberError && props.validateNumber ? (
             <span className="error">Wrong format, numbers only</span>
           ) : null}
-          {props.validateCVC ? (
+          {props.cvcError && props.validateCVC ? (
             <span className="error">Can't be blank</span>
           ) : null}
         </>
@@ -45,7 +45,8 @@ function Input(props: any) {
               id={props.inputId}
             />
           </div>
-          {props.validateDateMm || props.validateDateYy ? (
+          {(props.dateMmError || props.dateYyError) &&
+          (props.validateDateMm || props.validateDateYy) ? (
             <span className="error">Can't be blank</span>
           ) : null}
         </div>
