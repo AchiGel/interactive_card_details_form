@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 90px;
+  align-items: center;
 }
 
 .backGround {
@@ -53,4 +54,43 @@
   font-size: 18px;
   font-weight: 500;
   padding: 15px 0 15px;
+}
+
+.success-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 327px;
+}
+
+.success-page img {
+  margin-bottom: 35px;
+}
+
+.success-page .success-thanks {
+  color: #21092f;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 3.422px;
+  margin-bottom: 16px;
+}
+
+.success-page .success-text {
+  color: #8f8694;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 48px;
+}
+
+.success-page button {
+  border-radius: 8px;
+  background: #21092f;
+  color: #fff;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  width: 100%;
 }

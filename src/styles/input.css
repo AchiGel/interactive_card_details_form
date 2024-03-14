@@ -42,3 +42,17 @@
   max-width: 80px;
   min-width: 72px;
 }
+
+.error {
+  color: #ff5050;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.input-box .input-error {
+  border: 1px solid #ff5050;
+}
+
+.input-box .input-success {
+  border: 1px solid #6348fe;
+}

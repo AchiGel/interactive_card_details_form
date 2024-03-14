@@ -1,10 +1,10 @@
 import "../styles/backCard.css";
 
-function BackCard() {
+function BackCard(props: any) {
   return (
     <div className="backCard">
       <div className="backCard-number">
-        <span>000</span>
+        <span>{props.success ? props.cardCVC : "000"}</span>
       </div>
     </div>
   );
